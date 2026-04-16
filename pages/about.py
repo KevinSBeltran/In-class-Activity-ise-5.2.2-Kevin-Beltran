@@ -11,6 +11,7 @@ def login():
 def logout():
     st.session_state.logged_in = False
 
+company_name = "Fake Company LLC Inc."
 
 st.set_page_config(page_title="About")
 
@@ -24,11 +25,11 @@ else:
     st.sidebar.warning("Not logged in")
     st.sidebar.button("Log in", key="login", on_click=login)
 
-st.sidebar.write("This site is copyright Fake Company LLC Inc., 2024")
+st.sidebar.write(f"This site is copyright {company_name}, 2024")
 
 st.markdown(
-    """
-    Fake Company LLC Inc. is a fake company created in 2024 for the purposes of making a website with a lot of redundant code.
+    f"""
+    {company_name}. is a fake company created in 2024 for the purposes of making a website with a lot of redundant code.
 
     It produces nothing and has $0 a year in revenue.
 
@@ -42,8 +43,8 @@ st.image("./assets/fake_company.png")
 
 with st.expander("Company Info"):
     st.write(
-        """
-        Fake Company LLC Inc. is located at 1600 Amphitheatre Parkway Mountain View, CA 94043
+        f"""
+        {company_name} is located at 1600 Amphitheatre Parkway Mountain View, CA 94043
     """
     )
 

@@ -11,6 +11,8 @@ def login():
 def logout():
     st.session_state.logged_in = False
 
+company_name = "Fake Company LLC Inc."
+
 
 st.set_page_config(page_title="Overview")
 
@@ -24,7 +26,7 @@ else:
     st.sidebar.warning("Not logged in")
     st.sidebar.button("Log in", on_click=login)
 
-st.sidebar.write("This site is copyright Fake Company LLC Inc., 2024")
+st.sidebar.write(f"This site is copyright {company_name}, 2024")
 
 st.write(
     """Here is a page with a site overview.
@@ -37,8 +39,8 @@ st.write(
 
 with st.expander("Company Info"):
     st.write(
-        """
-        Fake Company LLC Inc. is located at 1600 Amphitheatre Parkway Mountain View, CA 94043
+        f"""
+        {company_name} is located at 1600 Amphitheatre Parkway Mountain View, CA 94043
     """
     )
 
